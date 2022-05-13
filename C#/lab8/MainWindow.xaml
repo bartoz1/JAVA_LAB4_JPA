@@ -11,17 +11,21 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
         <Menu Grid.Row="0">
             <MenuItem Header="_File" IsEnabled="True" Click="MenuItem_Click">
-                <MenuItem Header="_Exit"/>
+                <MenuItem Header="_Exit" Click="ExitProgram"/>
                 <MenuItem Header="_Open" Click="Open"/>
             </MenuItem>
         </Menu>
-        <TreeView Grid.Row="1" x:Name="treeView" Width="auto" AllowDrop="True">
+        <TreeView Grid.Row="1" x:Name="treeView" Width="auto" AllowDrop="True" SelectedItemChanged="SelectedItenChangeHandle">
 
         </TreeView>
-        <TextBlock x:Name="FileViewer" HorizontalAlignment="Right" Margin="393,0,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Center" Width="406" Height="416" RenderTransformOrigin="1.328,0.512"/>
+        <TextBox x:Name="FileViewer" HorizontalAlignment="Left" Margin="400,0,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Center" Width="390" Height="396" RenderTransformOrigin="1.328,0.512" Background="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" />
+        <StatusBar Grid.Row="2" >
+            <TextBlock Name="rashInfo" Text="" Margin="1,-2,0,0" Width="423" Height="20" />
+        </StatusBar>
     </Grid>
 
 </Window>
